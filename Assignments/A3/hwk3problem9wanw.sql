@@ -53,12 +53,12 @@ DROP TABLE IF EXISTS `movies`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `movies` (
-  `movie_id` int(11) NOT NULL,
+  `movie_id` int(11) NOT NULL AUTO_INCREMENT,
   `movie_title` varchar(50) NOT NULL,
-  `movie_scene_db` int(11) NOT NULL,
-  `movie_scene` int(11) NOT NULL,
+  `movie_scene_db` int(10) unsigned NOT NULL,
+  `movie_scene` int(10) unsigned NOT NULL,
   PRIMARY KEY (`movie_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -108,8 +108,8 @@ CREATE TABLE `timetable` (
   `char_name` varchar(50) NOT NULL,
   `planet_name` varchar(50) NOT NULL,
   `movie_id` int(11) NOT NULL,
-  `time_arrival` int(11) NOT NULL,
-  `time_departure` int(11) NOT NULL,
+  `time_arrival` int(10) unsigned NOT NULL,
+  `time_departure` int(10) unsigned NOT NULL,
   PRIMARY KEY (`timetable_id`),
   KEY `timetable_fk_char` (`char_name`),
   KEY `timetable_fk_planet` (`planet_name`),
@@ -139,4 +139,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-20 15:43:33
+-- Dump completed on 2017-05-20 18:27:29

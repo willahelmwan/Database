@@ -35,10 +35,10 @@ CREATE TABLE characters
 
 CREATE TABLE movies
 (
-  movie_id              INT         	   PRIMARY KEY,
+  movie_id              INT	    PRIMARY KEY   auto_increment,
   movie_title     		varchar(50)		   NOT NULL,
-  movie_scene_db        INT				   NOT NULL,
-  movie_scene			INT   			   NOT NULL
+  movie_scene_db        INT		unsigned   NOT NULL,
+  movie_scene			INT   	unsigned   NOT NULL
 );
 
 
@@ -48,8 +48,8 @@ CREATE TABLE timetable
   char_name				varchar(50)		not null,
   planet_name			varchar(50)		not null,
   movie_id				INT				not null,
-  time_arrival			int				not null,
-  time_departure		int				not null,
+  time_arrival			int	  unsigned 	not null,
+  time_departure		int	  unsigned	not null,
   CONSTRAINT timetable_fk_char
     FOREIGN KEY (char_name)
     REFERENCES characters (char_name),
@@ -60,3 +60,19 @@ CREATE TABLE timetable
     FOREIGN KEY (movie_id)
     REFERENCES movies (movie_id)
 );
+
+delimiter $
+CREATE trigger timetable_validate before insert on timetable
+for each row
+begin 
+	select movie_scene_db into @mynum from movies where movie_id = new.movie_id;
+	if (new.time_arrival > @mynum) or (new.time_departure > @mynum)
+    then 
+		signal sqlstate '45000' set message_text = 'bad scene';
+	end if;
+end$
+delimiter ;
+
+
+
+    

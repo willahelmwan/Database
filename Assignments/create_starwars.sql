@@ -31,6 +31,8 @@ CREATE TABLE characters
   CONSTRAINT characters_fk_planet
     FOREIGN KEY (char_home)
     REFERENCES planets (planet_name)
+    on delete set null
+    on update cascade
 );
 
 CREATE TABLE movies
@@ -52,14 +54,22 @@ CREATE TABLE timetable
   time_departure		int	  unsigned	not null,
   CONSTRAINT timetable_fk_char
     FOREIGN KEY (char_name)
-    REFERENCES characters (char_name),
+    REFERENCES characters (char_name)
+    on delete cascade
+    on update cascade,
   CONSTRAINT timetable_fk_planet
     FOREIGN KEY (planet_name)
-    REFERENCES planets (planet_name), 
+    REFERENCES planets (planet_name)
+    on delete cascade
+    on update cascade, 
   CONSTRAINT timetable_fk_movie
     FOREIGN KEY (movie_id)
     REFERENCES movies (movie_id)
+    on delete cascade
+    on update cascade
 );
+
+
 
 delimiter $
 CREATE trigger timetable_validate before insert on timetable

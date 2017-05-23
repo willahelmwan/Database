@@ -1,0 +1,12 @@
+Created by Willahelm Wan
+Assumptions: 
+
+1. When enter a record to the timetable, assume none of the columns can be null. Since the timetable's purpose is to track the character's movement in the movie, it does not make sense if the record is missing any one of those columns. 
+
+2. The time of arrival and time of departure cannot be outside of the range 0 to the number of scenes in DB of the movies. Since there are only 10 scenes stored in the database, it doesn't make sense to reference any scenes outside of those 10 scenes. 
+
+3. If one of the planet in the planets table is deleted, the record that's related to the planet in the timetable is also completely removed, and the home world of the character is set to null. 
+
+4. If one of the character from the characters table is deleted, the record in the timetable that contains the character's name is also deleted. 
+
+5. If the movie in the movies table is deleted, then the record in the timetable that contains the movie id is also removed.  

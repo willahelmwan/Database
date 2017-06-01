@@ -1,0 +1,1 @@
+Assume for the instance the comment_id and the post_id can be null. 

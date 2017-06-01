@@ -10,3 +10,5 @@ Assumptions:
 4. If one of the character from the characters table is deleted, the record in the timetable that contains the character's name is also deleted. 
 
 5. If the movie in the movies table is deleted, then the record in the timetable that contains the movie id is also removed.  
+
+6. Assume the characer names and planet names are unique. 

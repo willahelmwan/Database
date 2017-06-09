@@ -4,8 +4,8 @@ use starwarsfinalwanw;
 -- Question 1
 The schema in starwarsfinalwanw is 99% the same compare to my original starwars
 schema design. The only difference is that I did not specify the constraint on 
-what the user can input the affiliation as. However, this does not cause any data 
-integrity violations. 
+what the user can input in the affiliation fields in character table and the 
+planet table. However, this does not cause any data integrity violations. 
 */
 
 -- Question 2
@@ -20,16 +20,16 @@ select character_name, count(distinct planet_name) as planet_count from timetabl
 	group by character_name;
 
 -- Question 4
-select planet_type, count(distinct character_name) as Num_of_characters 
-	from planets, timetable
-	where planets.planet_type = 'desert' 
-		and (select planet_type from planets 
-				where planet_name = timetable.planet_name) = 'desert';
+select planets.planet_type, count(distinct timetable.character_name) as num_of_characters
+	from timetable
+		join planets on timetable.planet_name = planets.planet_name
+        where planet_type = 'desert'
+        group by planet_type;
 
 -- Question 5 assume the number of characters is the number of distinct characters
-select planet_name, count(distinct character_name) as character_count from timetable
+select planet_name from timetable
 	group by planet_name
-    order by character_count desc
+    order by count(distinct character_name) desc
     limit 1;
 
 -- Question 6 
@@ -60,15 +60,12 @@ where character_name = 'Lando Calrissian'
 order by screen_time desc
 limit 1;
 
-select * from timetable;
-select * from planets;
-select * from characters;
-select * from movies;
 -- Question 9
-select planet_name, group_concat(distinct character_name separator ', ') 
-	as characters
-	from timetable
-    group by planet_name;
+select planet_type, group_concat(distinct character_name separator ', ') as characters
+	from (select timetable.character_name, planets.planet_type, timetable.movie_id 
+			from timetable
+			join planets on planets.planet_name = timetable.planet_name) x
+	group by planet_type;
 
 -- Question 10
 select planet_type from 

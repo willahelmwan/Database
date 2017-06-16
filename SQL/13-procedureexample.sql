@@ -207,7 +207,7 @@ CALL test();
 -- if invoice_total > 1000    
 
 USE ap;
-SELECT invoice_id, invoice_total FROM invoices
+SELECT invoice_id, invoice_total  FROM invoices
     WHERE invoice_total - payment_total - credit_total > 0
      AND invoice_total>1000;
  
@@ -280,9 +280,9 @@ CALL test();
 -- in-class exercise
 
 -- Write a script that creates a stored procedure names test.
--- It should create a cursor for the result set that consists
+-- It shoudl create a cursor for the result set that consists
 -- of venndor_name, invoice_number, and balance_due
--- for each invoice with a balance >=$5000
+-- for each invoice with a blanace >=$5000
 -- the result should in descending order by balance due
 -- Display a string variable that includes the balance_due, 
 -- invoice_numer, and vendor_name for each invoice

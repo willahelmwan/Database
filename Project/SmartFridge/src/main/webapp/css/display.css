@@ -1,0 +1,18 @@
+
+tr.odd {
+	background-color: #fff
+}
+
+tr.tableRowEven, tr.even {
+	background-color: #CCCCCC
+}
+/* Css for table elements */
+th, td {
+	padding: 2px 4px 2px 4px;
+	/* text-align: left; */
+	vertical-align: top;
+}
+
+thead tr {
+	background-color: #999999;
+}

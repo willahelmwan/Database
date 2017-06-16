@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry including="**/*.java" kind="src" path="src/main/java"/>
+	<classpathentry excluding="**/*.java" kind="src" path="src/main/resources"/>
+	<classpathentry exported="true" kind="var" path="M2_REPO/displaytag/displaytag/1.2/displaytag-1.2.jar"/>
+	<classpathentry exported="true" kind="var" path="M2_REPO/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar"/>
+	<classpathentry exported="true" kind="var" path="M2_REPO/jstl/jstl/1.2/jstl-1.2.jar"/>
+	<classpathentry exported="true" kind="var" path="M2_REPO/asm/asm/3.3/asm-3.3.jar"/>
+	<classpathentry exported="true" kind="var" path="M2_REPO/asm/asm-commons/3.3/asm-commons-3.3.jar"/>
+	<classpathentry exported="true" kind="var" path="M2_REPO/asm/asm-tree/3.3/asm-tree-3.3.jar"/>
+	<classpathentry exported="true" kind="var" path="M2_REPO/commons-fileupload/commons-fileupload/1.2.2/commons-fileupload-1.2.2.jar" sourcepath="M2_REPO/commons-fileupload/commons-fileupload/1.2.2/commons-fileupload-1.2.2-sources.jar"/>
+	<classpathentry exported="true" kind="var" path="M2_REPO/commons-io/commons-io/2.0.1/commons-io-2.0.1.jar" sourcepath="M2_REPO/commons-io/commons-io/2.0.1/commons-io-2.0.1-sources.jar"/>
+	<classpathentry exported="true" kind="var" path="M2_REPO/commons-lang/commons-lang/2.5/commons-lang-2.5.jar" sourcepath="M2_REPO/commons-lang/commons-lang/2.5/commons-lang-2.5-sources.jar"/>
+	<classpathentry exported="true" kind="var" path="M2_REPO/org/freemarker/freemarker/2.3.18/freemarker-2.3.18.jar" sourcepath="M2_REPO/org/freemarker/freemarker/2.3.18/freemarker-2.3.18-sources.jar"/>
+	<classpathentry exported="true" kind="var" path="M2_REPO/javassist/javassist/3.11.0.GA/javassist-3.11.0.GA.jar" sourcepath="M2_REPO/javassist/javassist/3.11.0.GA/javassist-3.11.0.GA-sources.jar"/>
+	<classpathentry exported="true" kind="var" path="M2_REPO/junit/junit/3.8.1/junit-3.8.1.jar" sourcepath="M2_REPO/junit/junit/3.8.1/junit-3.8.1-sources.jar"/>
+	<classpathentry exported="true" kind="var" path="M2_REPO/ognl/ognl/3.0.4/ognl-3.0.4.jar" sourcepath="M2_REPO/ognl/ognl/3.0.4/ognl-3.0.4-sources.jar"/>
+	<classpathentry exported="true" kind="var" path="M2_REPO/org/apache/struts/struts2-core/2.3.1.2/struts2-core-2.3.1.2.jar" sourcepath="M2_REPO/org/apache/struts/struts2-core/2.3.1.2/struts2-core-2.3.1.2-sources.jar"/>
+	<classpathentry exported="true" kind="var" path="M2_REPO/org/apache/struts/xwork/xwork-core/2.3.1.2/xwork-core-2.3.1.2.jar" sourcepath="M2_REPO/org/apache/struts/xwork/xwork-core/2.3.1.2/xwork-core-2.3.1.2-sources.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.web"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Java SE 8 [1.8.0_25]">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
